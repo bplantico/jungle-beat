@@ -27,6 +27,26 @@ class LinkedList
     data
   end
 
+  def prepend(data)
+    if @head == nil
+      @head = Node.new(data)
+    else
+      previous_head = @head
+      @head = Node.new(data)
+      @head.next_node = previous_head
+    end
+
+    @count += 1
+
+    if @string.empty?
+      @string = data
+    else
+      @string = data + " " + @string
+    end
+
+    data
+  end
+
   def to_string
     @string
   end
