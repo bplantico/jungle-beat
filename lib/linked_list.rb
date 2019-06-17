@@ -12,4 +12,8 @@ class LinkedList
     @count += 1
     data
   end
+
+  def to_string
+    @head.data
+  end
 end
