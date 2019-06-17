@@ -6,9 +6,8 @@ class LinkedList
   end
 
   def append(data)
+    @head = Node.new(data)
     data
   end
-
-
 
 end
