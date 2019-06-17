@@ -5,6 +5,10 @@ class LinkedList
     @head = head
   end
 
+  def append(data)
+    data
+  end
+
 
 
 end
