@@ -5,17 +5,30 @@ class LinkedList
   def initialize
     @head = nil
     @count = 0
+    @string = ""
   end
 
   def append(data)
-    @head = Node.new(data) if @head == nil
+
+    if @head == nil
+      @head = Node.new(data)
+    else
+      @head.next_node = Node.new(data)
+    end
+
     @count += 1
+
+    if @string.empty?
+      @string = data
+    else
+      @string = @string + " " + data
+    end
+
     data
   end
 
   def to_string
-    @head.data
-    # require "pry"; binding.pry
+    @string
   end
 
 end
