@@ -73,6 +73,7 @@ class LinkedListTest < Minitest::Test
     @list.prepend("dop")
 
     assert_equal "dop plop suu", @list.to_string
+    assert_equal 3, @list.count
   end
 
 end
