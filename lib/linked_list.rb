@@ -15,4 +15,13 @@ class LinkedList
     data
   end
 
+  def count
+    if @head.nil?
+      return 0
+    else
+      count = 1
+    end
+  #   require "pry"; binding.pry
+  end
+
 end

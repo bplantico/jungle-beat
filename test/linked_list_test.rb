@@ -24,4 +24,12 @@ class LinkedListTest < Minitest::Test
     assert_nil @list.head.next_node
   end
 
+  def test_it_keeps_count_of_nodes
+    assert_equal 0, @list.count
+
+    @list.append("doop")
+
+    assert_equal 1, @list.count
+  end
+
 end
