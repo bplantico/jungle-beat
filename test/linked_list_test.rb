@@ -8,7 +8,7 @@ class LinkedListTest < Minitest::Test
   def setup
     @list = LinkedList.new
   end
-
+  
   def test_it_exists
     assert_instance_of LinkedList, @list
   end
@@ -51,6 +51,16 @@ class LinkedListTest < Minitest::Test
     @list.append("BBBEEEEPP")
 
     assert_nil @list.head.next_node.next_node.next_node
+  end
+
+  def test_it_counts_multiple_nodes
+    assert_equal 0, @list.count
+    @list.append("doop")
+    assert_equal 1, @list.count
+    @list.append("deep")
+    assert_equal 2, @list.count
+    @list.append("beep")
+    assert_equal 3, @list.count
   end
 
 end

@@ -26,6 +26,12 @@ class LinkedList
       return 0
     else
       count = 1
+      head = @head
+      until head.tail?
+        head = head.next_node
+        count += 1
+      end
+      return count
     end
   end
 
