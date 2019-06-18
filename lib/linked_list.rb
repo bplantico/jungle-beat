@@ -27,8 +27,9 @@ class LinkedList
     string = ""
     if @head.nil?
       string
+    else
+      @head.data
     end
-    # require "pry"; binding.pry
   end
 
 end

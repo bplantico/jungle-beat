@@ -35,9 +35,9 @@ class LinkedListTest < Minitest::Test
   def test_it_can_print_data_to_string
     assert_equal "", @list.to_string
 
-    # @list.append("doop")
-    #
-    # assert_equal "doop", @list.to_string
+    @list.append("doop")
+    
+    assert_equal "doop", @list.to_string
   end
 
 end
