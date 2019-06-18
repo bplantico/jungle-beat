@@ -28,7 +28,7 @@ class LinkedList
     if @head.nil?
       string
     else
-      @head.data
+      string = @head.data
     end
   end
 
