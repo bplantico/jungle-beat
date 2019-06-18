@@ -47,6 +47,10 @@ class LinkedListTest < Minitest::Test
     @list.append("deep")
 
     assert_instance_of Node, @list.head.next_node
+
+    @list.append("BBBEEEEPP")
+
+    assert_nil @list.head.next_node.next_node.next_node
   end
 
 end

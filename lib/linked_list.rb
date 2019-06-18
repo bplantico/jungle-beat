@@ -11,7 +11,11 @@ class LinkedList
     if @head == nil
       @head = new_node
     else
-      @head.next_node = new_node
+      head = @head
+      until head.tail?
+        head = head.next_node
+      end
+      head.next_node = new_node
     end
 
     data
