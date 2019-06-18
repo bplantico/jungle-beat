@@ -64,4 +64,15 @@ class LinkedListTest < Minitest::Test
     assert_equal 4, @list.count
   end
 
+  def test_it_can_prepend_nodes
+    @list.append("plop")
+    @list.append("suu")
+
+    assert_equal "plop suu", @list.to_string
+
+    @list.prepend("dop")
+
+    assert_equal "dop plop suu", @list.to_string
+  end
+
 end

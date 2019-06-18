@@ -17,7 +17,19 @@ class LinkedList
       end
       head.next_node = new_node
     end
+    data
+  end
 
+  def prepend(data)
+    new_node = Node.new(data)
+
+    if @head == nil
+      @head = new_node
+    else
+      old_head = @head
+      @head = new_node
+      @head.next_node = old_head
+    end
     data
   end
 
