@@ -9,4 +9,8 @@ class LinkedListTest < Minitest::Test
     @list = LinkedList.new
   end
 
+  def test_it_exists
+    assert_instance_of LinkedList, @list
+  end
+
 end
