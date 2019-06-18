@@ -10,6 +10,8 @@ class LinkedList
 
     if @head == nil
       @head = new_node
+    else
+      @head.next_node = new_node
     end
 
     data
