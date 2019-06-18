@@ -32,4 +32,12 @@ class LinkedListTest < Minitest::Test
     assert_equal 1, @list.count
   end
 
+  def test_it_can_print_data_to_string
+    assert_equal "", @list.to_string
+
+    # @list.append("doop")
+    #
+    # assert_equal "doop", @list.to_string
+  end
+
 end

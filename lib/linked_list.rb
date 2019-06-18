@@ -21,7 +21,14 @@ class LinkedList
     else
       count = 1
     end
-  #   require "pry"; binding.pry
+  end
+
+  def to_string
+    string = ""
+    if @head.nil?
+      string
+    end
+    # require "pry"; binding.pry
   end
 
 end
