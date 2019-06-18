@@ -1,6 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/emoji'
-require './lib/node'
+require './test/test_helper'
 
 class NodeTest < Minitest::Test
   def setup

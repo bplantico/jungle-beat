@@ -6,5 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'pry'
+gem 'rake'
 gem 'minitest'
 gem 'minitest-emoji'

@@ -1,7 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/emoji'
-require './lib/node'
-require './lib/linked_list'
+require './test/test_helper'
 
 class LinkedListTest < Minitest::Test
 
