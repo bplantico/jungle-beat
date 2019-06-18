@@ -37,11 +37,16 @@ class LinkedList
 
   def to_string
     string = ""
-    if @head.nil?
-      string
-    else
-      string = @head.data
+    head = @head
+
+    return string if head.nil?
+
+    string = head.data
+    until head.tail?
+      string += " #{head.next_node.data}"
+      head = head.next_node
     end
+    string
   end
 
 end
