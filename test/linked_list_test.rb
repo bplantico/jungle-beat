@@ -17,4 +17,8 @@ class LinkedListTest < Minitest::Test
     assert_nil @list.head
   end
 
+  def test_it_can_append_to_list
+    assert_equal "doop", @list.append("doop")
+  end
+
 end
