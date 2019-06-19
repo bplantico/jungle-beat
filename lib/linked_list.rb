@@ -8,7 +8,7 @@ class LinkedList
   def append(data)
     new_node = Node.new(data)
 
-    if @head == nil
+    if @head.nil?
       @head = new_node
     else
       head = @head
@@ -23,7 +23,7 @@ class LinkedList
   def prepend(data)
     new_node = Node.new(data)
 
-    if @head == nil
+    if @head.nil?
       @head = new_node
     else
       old_head = @head
@@ -31,6 +31,19 @@ class LinkedList
       @head.next_node = old_head
     end
     data
+  end
+
+  def insert_after(position, data)
+    new_node = Node.new(data)
+    if @head.nil?
+      @head = new_node
+    else
+      head = @head
+      (position - 1).times { head = head.next_node }
+      new_next = head.next_node
+      head.next_node = new_node
+      head.next_node.next_node = new_next
+    end
   end
 
   def count
