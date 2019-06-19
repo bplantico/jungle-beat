@@ -61,6 +61,16 @@ class LinkedList
     self.to_string.include?(data)
   end
 
+  def pop
+    head = @head
+    until head.next_node.tail?
+      head = head.next_node
+    end
+    popped_data = head.next_node.data
+    head.next_node = nil
+    popped_data
+  end
+
   def count
     if @head.nil?
       return 0
