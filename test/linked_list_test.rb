@@ -81,13 +81,15 @@ class LinkedListTest < Minitest::Test
     @list.append("suu")
     @list.prepend("dop")
 
-    @list.insert(1, "woo")
+    @list.insert_after(1, "woo")
 
     assert_equal "dop woo plop suu", @list.to_string
+    assert_equal 4, @list.count
 
     @list.insert_after(3, "meow meow")
 
     assert_equal "dop woo plop meow meow suu", @list.to_string
+    assert_equal 5, @list.count
   end
 
 end
