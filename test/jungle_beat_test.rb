@@ -15,4 +15,11 @@ class JungleBeatTest < Minitest::Test
     assert_nil @jb.list.head
   end
 
+  def test_it_can_append
+    assert_equal "deep doo ditt", @jb.append("deep doo ditt")
+
+    assert_equal "deep", @jb.list.head.data
+    assert_equal "doo", @jb.list.head.next_node.data
+  end
+
 end
