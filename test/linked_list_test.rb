@@ -28,14 +28,19 @@ class LinkedListTest < Minitest::Test
 
   def test_it_can_print_data_to_string
     assert_equal "", @list.to_string
+
     @list.append("doop")
+
     assert_equal "doop", @list.to_string
   end
 
   def test_it_appends_multiple_nodes
     @list.append("doop")
+
     assert_nil @list.head.next_node
+
     @list.append("deep")
+
     assert_instance_of Node, @list.head.next_node
     @list.append("BBBEEEEPP")
     assert_nil @list.head.next_node.next_node.next_node
@@ -76,20 +81,31 @@ class LinkedListTest < Minitest::Test
     assert_equal 3, @list.count
   end
 
-  def test_it_can_insert_after_given_nodes
+  def test_it_can_insert_given_nodes
     @list.append("plop")
     @list.append("suu")
     @list.prepend("dop")
 
-    @list.insert_after(1, "woo")
+    @list.insert(1, "woo")
 
     assert_equal "dop woo plop suu", @list.to_string
     assert_equal 4, @list.count
 
-    @list.insert_after(3, "meow meow")
+    @list.insert(3, "meow meow")
 
     assert_equal "dop woo plop meow meow suu", @list.to_string
     assert_equal 5, @list.count
   end
 
+  def test_it_can_find_and_return_node_data
+    @list.append("deep")
+    @list.append("woo")
+    @list.append("shi")
+    @list.append("shu")
+    @list.append("blop")
+
+    assert_equal "shi", @list.find(2, 1)
+    assert_equal "woo shi", @list.find(1, 2)
+    assert_equal "deep woo shi shu", @list.find(0, 4)
+  end
 end

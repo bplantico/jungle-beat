@@ -33,7 +33,7 @@ class LinkedList
     data
   end
 
-  def insert_after(position, data)
+  def insert(position, data)
     new_node = Node.new(data)
     if @head.nil?
       @head = new_node
@@ -46,12 +46,23 @@ class LinkedList
     end
   end
 
+  def find(start_position, elements)
+    string = ""
+    head = @head
+    (start_position).times { head = head.next_node }
+    elements.times do
+      string += " #{head.data}"
+      head = head.next_node
+    end
+    string.strip
+  end
+
   def count
     if @head.nil?
       return 0
     else
       count = 1
-      head = @head
+      head  = @head
       until head.tail?
         head = head.next_node
         count += 1
