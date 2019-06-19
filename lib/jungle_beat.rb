@@ -31,7 +31,6 @@ class JungleBeat
   end
 
   def play
-    # require "pry"; binding.pry
     `say -r 200 #{@list.to_string}`
   end
 
