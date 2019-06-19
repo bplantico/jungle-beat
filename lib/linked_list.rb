@@ -57,6 +57,10 @@ class LinkedList
     string.strip
   end
 
+  def includes?(data)
+    self.to_string.include?(data)
+  end
+
   def count
     if @head.nil?
       return 0
