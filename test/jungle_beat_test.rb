@@ -20,6 +20,10 @@ class JungleBeatTest < Minitest::Test
 
     assert_equal "deep", @jb.list.head.data
     assert_equal "doo", @jb.list.head.next_node.data
+    assert_equal 3, @jb.count
+
+    assert_equal "woo hoo shoo", @jb.append("woo hoo shoo")
+    assert_equal 6, @jb.count
   end
 
 end

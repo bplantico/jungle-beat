@@ -7,9 +7,27 @@ class JungleBeat
   end
 
   def append(values)
+    temp_string = ""
     separated_values = values.split(" ")
-    separated_values.each { |value| @list.append(value) }
-    @list.to_string
+    separated_values.each do |value|
+      @list.append(value)
+      temp_string.concat(" #{value}")
+    end
+    temp_string.strip
+  end
+
+  def count
+    if @list.head.nil?
+      return 0
+    else
+      count = 1
+      head  = @list.head
+      until head.tail?
+        head = head.next_node
+        count += 1
+      end
+      return count
+    end
   end
 
 end
