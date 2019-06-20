@@ -140,6 +140,7 @@ class LinkedListTest < Minitest::Test
     @list.append("woo")
 
     assert_equal 0, @list.append("hoot")
+    
     assert_equal "deep woo", @list.to_string
     assert_equal 2, @list.count
   end

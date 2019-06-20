@@ -27,7 +27,11 @@ class Node
       'meow meow',
       'shi',
       'shu',
-      'blop'
+      'blop',
+      'doo',
+      'ditt',
+      'hoo',
+      'shoo'
                   ]
 
     valid_beats.include?(@data)

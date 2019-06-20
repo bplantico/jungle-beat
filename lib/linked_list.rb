@@ -27,27 +27,38 @@ class LinkedList
   def prepend(data)
     new_node = Node.new(data)
 
-    if @head.nil?
-      @head = new_node
+    if new_node.valid?
+      if @head.nil?
+        @head = new_node
+      else
+        old_head = @head
+        @head = new_node
+        @head.next_node = old_head
+      end
+      data
     else
-      old_head = @head
-      @head = new_node
-      @head.next_node = old_head
+      0
     end
-    data
+
   end
 
   def insert(position, data)
     new_node = Node.new(data)
-    if @head.nil?
-      @head = new_node
+
+    if new_node.valid?
+      if @head.nil?
+        @head = new_node
+      else
+        head = @head
+        (position - 1).times { head = head.next_node }
+        new_next = head.next_node
+        head.next_node = new_node
+        head.next_node.next_node = new_next
+      end
     else
-      head = @head
-      (position - 1).times { head = head.next_node }
-      new_next = head.next_node
-      head.next_node = new_node
-      head.next_node.next_node = new_next
+      0
     end
+    
   end
 
   def find(start_position, elements)
