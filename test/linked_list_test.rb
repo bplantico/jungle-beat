@@ -134,4 +134,13 @@ class LinkedListTest < Minitest::Test
     assert_equal "shu", @list.pop
     assert_equal "deep woo shi", @list.to_string
   end
+
+  def test_only_valid_beats_in_list
+    @list.append("deep")
+    @list.append("woo")
+
+    assert_equal 0, @list.append("hoot")
+    assert_equal "deep woo", @list.to_string
+    assert_equal 2, @list.count
+  end
 end

@@ -8,16 +8,20 @@ class LinkedList
   def append(data)
     new_node = Node.new(data)
 
-    if @head.nil?
-      @head = new_node
-    else
-      head = @head
-      until head.tail?
-        head = head.next_node
+    if new_node.valid?
+      if @head.nil?
+        @head = new_node
+      else
+        head = @head
+        until head.tail?
+          head = head.next_node
+        end
+        head.next_node = new_node
       end
-      head.next_node = new_node
+      data
+    else
+      return 0
     end
-    data
   end
 
   def prepend(data)
