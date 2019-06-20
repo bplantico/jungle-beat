@@ -31,7 +31,7 @@ class JungleBeat
   end
 
   def play
-    `say -r 200 #{@list.to_string}`
+    `say -v 'Kyoko' -r 200 #{@list.to_string}`
   end
 
 end
